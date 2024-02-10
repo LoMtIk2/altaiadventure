@@ -6,7 +6,7 @@ body, html {
     -moz-user-select: none;
     -khtml-user-select: none;
     -ms-user-select: none;
-}
+  }
 
 .header {
     box-shadow: 0px 0px 20px #7373d9b0;
@@ -18,6 +18,14 @@ body, html {
     justify-content: space-between;
 }
 
+
+@media (max-width: 768px) {
+    .filter {
+      width: 100%; /* Изменяем ширину на 100% для адаптации под мобильные устройства */
+      margin: 20px; /* Изменяем отступы для адаптации под мобильные устройства */
+    }
+}
+
 .filter {
     font-weight: bold;
     width: 750px;
@@ -26,14 +34,14 @@ body, html {
 }
 
 .logo {
-    font-size: 50px;
+    font-size: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .menu {
-    margin-right: 20px;
+    margin-right: 10px;
     display: flex;
     align-items: center;
 }
@@ -474,7 +482,9 @@ footer {
       max-width: calc(50% - 40px); /* Максимальная ширина для каждой картинки при уменьшении ширины экрана */
     }
   }
-  
+
+
+
   .image-wrapper img {
     width: 300px; /* Занимать всю доступную ширину */
     height: 300px; /* Фиксированная высота */
