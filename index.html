@@ -18,7 +18,7 @@
         <div class="content">
             <div class="menu-sidebar">
                 <input class="search" placeholder="Поиск...."></input>
-                <p id="avia">Авиабилеты</p>
+                <p onclick="openAvia()">Авиабилеты</p>
                 <p id="jd">Ж/Д билеты</p>
                 <p id="turs">Туры</p>
             </div>
@@ -35,6 +35,16 @@
                     </div>
             </div>
             <div class="photo3"><img style="border-radius: 20px; width: 200px; height: 100px;" src="photos/photo3.jpeg"></div>
+        </div>
+        <div id="avia" class="aviamodal">
+            <button id="closeModal" onclick="closeAvia()">X</button><br><br>
+            <button><span>Откуда</span><span>🔼</span>
+            </button>
+            <button><span>Куда</span><span>🔽</span></button><br>
+            <button><span>Дата вылета</span><span>📅</span></button>
+            <button><span>Возвращение</span><span>📅</span></button><br>
+            <button id="first">1 пассажир / Эконом</button><br>
+            <button id="enter" onclick="window.location.href='aviaturs.html'">Найти билеты</button>
         </div>
         <div id="myModal" class="modal">
             <button id="closeModal" onclick="closeModal()">X</button>
@@ -64,6 +74,16 @@
         }
         function closeModal() {
             document.getElementById('myModal').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+        function openAvia() {
+            document.getElementById('avia').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+            const menuSidebar = document.querySelector('.menu-sidebar');
+            menuSidebar.style.left = menuSidebar.style.left === '0px' ? '-600px' : '0px';
+        }
+        function closeAvia() {
+            document.getElementById('avia').style.display = 'none';
             document.getElementById('overlay').style.display = 'none';
         }
     </script>

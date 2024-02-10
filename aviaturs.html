@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Altai Adventure</title>
+    
+</head>
+<body>
+    <div class="header">
+        <div class="to-start" onclick="window.location.href='index.html'"">Главная</div>
+        <div class="logo">Туры по горному Алтаю</div>
+        <div class="menu">
+            <div class="login-button" onclick="openModal()">Войти</div>
+        </div>
+    </div>
+        <div class="content">
+            <div class="filter">
+                <button class="filter-button" onclick="filters()">⥮</button><a id="filter-text">Сортировать:</a><input type="text" id="inputField" value="Популярное (автоматически)" readonly>
+                <div id="allfilters" style="display: none;">
+                    <button id="buttonfilters" onclick="changeText('Популярное')">Популярное</button>
+                    <button id="buttonfilters" onclick="changeText('Сначала дорогие')">Сначала дорогие</button>
+                    <button id="buttonfilters" onclick="changeText('Сначала дешёвые')">Сначала дешевые</button>
+                    <button id="buttonfilters" onclick="changeText('Сначала новые')">Сначала новые</button>
+                    <button id="buttonfilters" onclick="changeText('Сначала старые')">Сначала старые</button>
+                </div>
+            </div>
+            <div class="image-container">
+                <div class="image-wrapper">
+                    <img src="photos/tur1.jpeg" alt="Image 1">
+                    <div class="text-overlay">
+                        НОВИНКА
+                    </div>
+                    <div class="text-loverlay">
+                        Дорогами зимнего  Алтая
+                    </div>
+                </div>
+                <div class="image-wrapper">
+                    <img src="photos/tur2.jpeg" alt="Image 1">
+                    <div class="text-overlay">
+                        НОВИНКА
+                    </div>
+                    <div class="text-loverlay">
+                        5 дней на Алтае
+                    </div>
+                </div>
+                <div class="image-wrapper">
+                    <img src="photos/tur3.jpeg" alt="Image 1">
+                    <div class="text-overlay">
+                        НОВИНКА
+                    </div>
+                    <div class="text-loverlay">
+                        Алтайский калейдскоп
+                    </div>
+                </div>
+                <div class="image-wrapper">
+                    <img src="photos/tur4.png" alt="Image 1">
+                    <div class="text-overlay">
+                        НОВИНКА
+                    </div>
+                    <div class="text-loverlay">
+                        Энергия зимнего алтая
+                    </div>
+                </div>
+                <div class="image-wrapper">
+                    <img src="photos/tur5.png" alt="Image 1">
+                    <div class="text-overlay">
+                        НОВИНКА
+                    </div>
+                    <div class="text-loverlay">
+                        Цветущий Алтай
+                    </div>
+                </div>
+                <div class="image-wrapper">
+                    <img src="photos/tur6.png" alt="Image 1">
+                    <div class="text-overlay">
+                        НОВИНКА
+                    </div>
+                    <div class="text-loverlay">
+                        Когда просыпаются водопады
+                    </div>
+                </div>
+                <!-- Добавьте остальные изображения и тексты -->
+              </div>
+        </div>
+        
+    <footer>
+        <div class="contact-info">
+            <div class="phone-number"><a>Телефон:</a> <em>+7 (3852) 29-12-22</em></div>
+            <div class="address"><a>Адрес:</a> <em>просп. Ленина, 61</em></div>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const menuSidebar = document.querySelector('.menu-sidebar');
+            menuSidebar.style.left = menuSidebar.style.left === '0px' ? '-600px' : '0px';
+        }
+        function openModal() {
+            document.getElementById('myModal').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+        function openAvia() {
+            document.getElementById('avia').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+            const menuSidebar = document.querySelector('.menu-sidebar');
+            menuSidebar.style.left = menuSidebar.style.left === '0px' ? '-600px' : '0px';
+        }
+        function closeAvia() {
+            document.getElementById('avia').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        function filters() {
+            var menu = document.getElementById('allfilters');
+            if (menu.style.display === 'none') {
+            menu.style.display = 'block';
+            } else {
+            menu.style.display = 'none';
+            }
+        }
+
+        function changeText(text) {
+            document.getElementById('inputField').value = text;
+            filters();
+        }
+    </script>
+</body>
+</html>

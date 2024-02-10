@@ -18,7 +18,12 @@ body, html {
     justify-content: space-between;
 }
 
-
+.filter {
+    font-weight: bold;
+    width: 750px;
+    display: flex;
+    margin: 40px;
+}
 
 .logo {
     font-size: 50px;
@@ -33,6 +38,71 @@ body, html {
     align-items: center;
 }
 
+.filter-button {
+    margin-right: 5px;
+    background-color: #7373D9;
+    border: 1px solid #7373D9;
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 25px;
+    padding-right: 8px;
+    padding-left: 8px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .filter-button:hover {
+    background-color: #ffffff;
+    color: #7373D9;
+  }
+
+
+#allfilters {
+    border: 2px solid #7373D9;
+    width: 300px;
+    display: none;
+    margin-top: 60px;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    padding: 20px;
+    z-index: 1;
+  }
+
+#buttonfilters {
+    font-weight: bold;
+    background-color: #ffffff;
+    color: #7373D9;
+    padding: 10px 20px;
+    width: 250px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 3px solid #7373D9;
+    font-size: 20px;
+    margin: 10px 10px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+#buttonfilters:hover {
+    color: #ffffff;
+    background-color: #7373D9;
+}
+
+#filter-text {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#inputField {
+    margin-left: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    border: none;
+    width: 500px;
+}
 
 .menu-icon {
     font-size: 50px;
@@ -55,8 +125,30 @@ body, html {
     background-color: white;
 }
   
+.to-start {
+    font-size: 20px;
+    padding: 0;
+    font-weight: bold;
+    color: white;
+    width: 100px;
+    height: 50px;
+    margin-left: 20px;
+    background-color: #7373D9;
+    border-radius: 500px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+.to-start:hover {
+    color: #7373D9;
+    background-color: white;
+}
+
 .menu-sidebar {
-    z-index: 9;
+    z-index: 29;
     border-radius: 10px;
     position: absolute;
     top: 0;
@@ -86,7 +178,6 @@ body, html {
 
 .content {
     position: relative;
-    overflow: hidden;
     text-align: center;
     padding-top: 20px;
 }
@@ -110,15 +201,17 @@ body, html {
 }
 
 .menu-sidebar p {
+    font-style: italic;
+    color: #5c5caa;
     border-radius: 10px;
     display: flex;
     margin: 15px auto;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     cursor: pointer;
     border: 2px solid #7373D9;
     font-size: 20px;
-    width: 300px;
+    width: 400px;
     height: 60px;
 }
 
@@ -139,7 +232,7 @@ body, html {
     margin: auto;
     height: 100px;
     background-color: #7373D9;
-    border-radius: 70px;
+    border-radius: 40px;
     text-align: center;
     margin-top: 60px;
     margin-bottom: 100px;
@@ -186,14 +279,14 @@ body, html {
 }
 
 footer {
-    box-shadow: 0px 0px 20px #7373d9b0;
+    box-shadow: 0px 0px 30px #7373d9b0;
     position: fixed;
     display: block;
     bottom: 0;
     text-align: start;
     width: 100%;
     height: 100px;
-    background-color: #f2f2f2;
+    background-color: #ffffff;
 }
 
 .phone-number, .address {
@@ -224,7 +317,20 @@ footer {
     padding: 20px; /* Внутренний отступ */
     border: 2px solid #7373D9; /* Граница */
     z-index: 1000; /* Порядок слоя */
-  }
+}
+
+.aviamodal {
+    border-radius: 20px;
+    display: none; /* По умолчанию скрыто */
+    position: fixed; /* Фиксированное позиционирование */
+    top: 50%; /* Расположение по вертикали */
+    left: 50%; /* Расположение по горизонтали */
+    transform: translate(-50%, -50%); /* Центрирование */
+    background-color: #ffffff; /* Цвет фона */
+    padding: 20px; /* Внутренний отступ */
+    border: 2px solid #7373D9; /* Граница */
+    z-index: 1000; /* Порядок слоя */
+}
 
 .overlay {
     display: none; /* По умолчанию скрыто */
@@ -277,8 +383,60 @@ footer {
     background-color: #ffffff;
     color: #7373D9;
 }
+.aviamodal button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #7373D9;
+    background-color: #ffffff;
+    border: 1px solid #7373D9;
+    border-radius: 10px;
+    height: 40px;
+    margin: 10px;
+    cursor: pointer;
+    width: 500px;
+}
 
-.modal button {
+.aviamodal button:hover {
+    color: #ffffff;
+    background-color: #7373D9;
+}
+
+.aviamodal #enter:hover {
+    color: #7373D9;
+    background-color: #ffffff;
+}
+
+.aviamodal span {
+    margin: 2px;
+}
+
+
+.aviamodal #enter {
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    background-color: #7373D9;
+    border: 1px solid #7373D9;
+    border-radius: 10px;
+    height: 40px;
+    margin: 10px;
+    cursor: pointer;
+    width: 500px;
+}
+
+.aviamodal #closeModal {
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+    background-color: #7373D9;
+    border: 1px solid #7373D9;
+}
+
+.modal  button {
     font-size: 15px;
     font-weight: bold;
     color: #ffffff;
@@ -291,3 +449,71 @@ footer {
     display: block;
     width: 500px;
 }
+
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px 0;
+  }
+  
+  .image-wrapper {
+    position: relative;
+    margin-bottom: 120px; /* Увеличение расстояния между картинками снизу */
+    flex: 0 0 calc(33.33% - 40px); /* Показывать 3 картинки в ряд с отступами */
+    max-width: calc(33.33% - 40px); /* Максимальная ширина для каждой картинки */
+    box-sizing: border-box; /* Учитываем отступы внутри ширины и высоты элемента */
+  }
+  
+  @media (max-width: 768px) {
+    .image-wrapper {
+      margin-bottom: 20px; /* Уменьшение расстояния между картинками снизу при уменьшении ширины экрана */
+      flex: 0 0 calc(50% - 40px); /* Показывать 2 картинки в ряд с отступами при уменьшении ширины экрана */
+      max-width: calc(50% - 40px); /* Максимальная ширина для каждой картинки при уменьшении ширины экрана */
+    }
+  }
+  
+  .image-wrapper img {
+    width: 300px; /* Занимать всю доступную ширину */
+    height: 300px; /* Фиксированная высота */
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  
+  .image-wrapper .text-overlay {
+    position: absolute;
+    width: 150px;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #ff429d; /* Фиолетовый полупрозрачный фон */
+    color: #fff; /* Белый текст */
+    font-size: 20px;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.image-wrapper .text-loverlay:hover {
+    background-color: #ffffff; /* Фиолетовый полупрозрачный фон */
+    color: #7373D9; /* Белый текст */
+}
+
+.image-wrapper .text-loverlay {
+    border: 2px solid #7373D9;
+    cursor: pointer;
+    position: absolute;
+    width: 250px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #7373D9; /* Фиолетовый полупрозрачный фон */
+    color: #fff; /* Белый текст */
+    font-size: 20px;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
